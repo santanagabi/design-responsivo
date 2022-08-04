@@ -1,2 +1,2 @@
-# Design Responsivo / Posicionamento do CSS
+# Grupo 3
 Aula 41 - Digital House
