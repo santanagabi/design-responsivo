@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <base href="../">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Aula 41 - Grid System</title>
+    <style>
+
+        .l-app {
+            border: 5px solid gray;
+            padding: 10px;
+
+            display: grid;
+            gap: 10px;
+
+            /*grid-template-columns: repeat(4, 1fr);*/ /* 1fr 1fr 1fr 1fr */
+            /*grid-template-columns: minmax(120px, 1fr) 1fr;*/
+            /*grid-template-columns: repeat(minmax(150px, 1fr), 4);*/
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+
+            grid-template-areas:
+                "nav"
+                "conteudo"
+                "relacionados"
+                "rodape";
+
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .l-nav {
+            grid-area: nav;
+        }
+
+        .l-conteudo {
+            grid-area: conteudo;
+        }
+
+        .l-relacionados {
+            grid-area: relacionados;
+        }
+
+        .l-rodape {
+            grid-area: rodape;
+        }
+        
+        .l-nav,
+        .l-conteudo,
+        .l-relacionados,
+        .l-rodape {
+            background-color: greenyellow;
+            border-radius: 5px;
+            font-family: Arial Black, sans-serif;
+            text-align: center;
+            padding: 10px;
+        }
+
+        @media (min-width: 720px) {
+            .l-nav,
+            .l-conteudo,
+            .l-relacionados,
+            .l-rodape {
+                background-color: orangered;
+            }
+
+            .l-app {
+                grid-template-columns: minmax(150px, 300px) repeat(3, 1fr);
+                grid-template-rows: 120px 1fr 50px;
+
+                grid-template-areas:
+                    "nav nav nav nav"
+                    "relacionados conteudo conteudo conteudo"
+                    "rodape rodape rodape rodape";
+
+                max-width: 1280px;
+                min-height: 760px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="l-app">
+        <nav class="l-nav">Navegação</nav>
+        <main class="l-conteudo">Conteúdo</main>
+        <aside class="l-relacionados">Relacionados</aside>
+        <footer class="l-rodape">Rodapé</footer>
+    </div>
+
+</body>
+</html>
